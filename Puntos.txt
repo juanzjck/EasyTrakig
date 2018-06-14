@@ -1,0 +1,8 @@
+#Nombre del bloque
+#Entrada
+#latitud
+#longitud
+8
+1
+34.02337
+-118.2858
