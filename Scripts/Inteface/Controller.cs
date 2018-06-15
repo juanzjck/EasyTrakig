@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Controler : MonoBehaviour {
+public class Controller : MonoBehaviour {
     public GameObject canvas_login;
     public ListStudent students;
     public Student studentLogin;
