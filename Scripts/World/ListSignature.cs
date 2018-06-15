@@ -10,7 +10,6 @@ public class ListSignaute
         return begin == null & end == null;
 
     }
-
     public void add(Signature s)
     {
         NodoSignature n = new NodoSignature(s,null,null);
