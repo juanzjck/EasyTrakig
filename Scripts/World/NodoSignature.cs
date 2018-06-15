@@ -31,7 +31,7 @@ public class NodoSignature  {
     }
 
 
-    public Signature getStudent(Studient studient)
+    public Signature getStudent(Student studient)
     {
 
         return signature;

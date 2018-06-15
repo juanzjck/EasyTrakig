@@ -14,7 +14,7 @@ public class ListStudent
         return begin == null & end == null;
 
     }
-    public void add(Studient s)
+    public void add(Student s)
     {
         NodoStudent n = new NodoStudent(s, null, null);
         if (isEmpty())
@@ -45,12 +45,12 @@ public class ListStudent
         return i;
 
     }
-    public Studient searchName(NodoStudent aux,string name)
+    public Student searchName(NodoStudent aux,string name)
     {
-        Studient valid = null;
+        Student valid = null;
         if(aux!=null){
-            if(aux.studient.name==name){
-                valid=aux.studient;
+            if(aux.student.name==name){
+                valid=aux.student;
             }else{
                 valid=searchName(aux.next, name);
                

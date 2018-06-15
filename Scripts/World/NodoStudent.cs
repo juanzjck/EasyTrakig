@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NodoStudent  {
-    public Studient studient;
+    public Student student;
     public NodoStudent before,next;
 
-    public NodoStudent(Studient studient,NodoStudent before,NodoStudent next){
-        this.studient = studient;
+    public NodoStudent(Student studient,NodoStudent before,NodoStudent next){
+        this.student = studient;
         this.before = before;
         this.next = next;
     }
 
-    public void setStudent(Studient studient){
+    public void setStudent(Student studient){
 
-        this.studient = studient;
+        this.student = studient;
     }
     public void setBefore(NodoStudent before)
     {
@@ -28,7 +28,7 @@ public class NodoStudent  {
     }
 
 
-    public Studient getStudent(Studient studient)
+    public Student getStudent(Student studient)
     {
 
         return studient;

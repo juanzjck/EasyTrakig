@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Studient : User
+public class Student : User
 {
     public Schedule schedule;
 
-    public Studient(){
+    public Student(){
         
     }
     public void addSignature(Signature s)
