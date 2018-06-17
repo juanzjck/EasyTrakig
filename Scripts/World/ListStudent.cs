@@ -44,8 +44,16 @@ public class ListStudent
         }
         return i;
 
+
+
+
     }
-    public Student searchName(NodoStudent aux,string name)
+
+    public Student searchName( string name){
+        return searchName(begin, name);
+
+    }
+    private Student searchName(NodoStudent aux,string name)
     {
         Student valid = null;
         if(aux!=null){

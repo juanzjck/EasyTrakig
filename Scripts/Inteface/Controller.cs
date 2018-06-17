@@ -41,7 +41,7 @@ public class Controller : MonoBehaviour {
         string text = "succeful signUp" + student.name;
         Debug.Log(text);
         GameObject.FindWithTag("SingUp").SetActive(false);
-
+        Debug.Log(students.searchName("juan").name);
     }
 
     public void compareUser(){
