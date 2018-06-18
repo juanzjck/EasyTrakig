@@ -11,7 +11,10 @@ public class Student : User
     }
     public void addSignature(Signature s)
     {
+        if (schedule==null){
 
+            schedule = new Schedule();
+        }
         schedule.addSgnature(s);
     }
 

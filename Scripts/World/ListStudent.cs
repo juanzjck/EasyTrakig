@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ListStudent 
+public class ListStudent
 {
     public ListStudent()
     {
@@ -29,7 +29,7 @@ public class ListStudent
             begin = n;
 
         }
-
+        Debug.Log("Done");
 
     }
     public int lengt()
@@ -48,23 +48,48 @@ public class ListStudent
 
 
     }
+    public bool passMatchAndMail(string email, string pass){
+        NodoStudent aux = begin;
+        bool f=false;
+        while (aux != null)
+        {
+            if (aux.student.email == email && aux.student.email == pass )
+            {
+                f=true;
 
-    public Student searchName( string name){
-        return searchName(begin, name);
+            }
+            aux = aux.next;
+        }
+        return f;
 
     }
-    private Student searchName(NodoStudent aux,string name)
-    {
-        Student valid = null;
-        if(aux!=null){
-            if(aux.student.name==name){
-                valid=aux.student;
-            }else{
-                valid=searchName(aux.next, name);
-               
+    public Student searchMail(string email){
+        NodoStudent aux = begin;
+        Student studen = null;
+        while (aux != null)
+        {
+            if (aux.student.email == email)
+            {
+                Debug.Log("done email");
+                studen = aux.student;
+
             }
-           
+            aux = aux.next;
         }
-        return valid;
+        return studen;
+
+    }
+    public Student searchName(string name){
+        NodoStudent aux = begin;
+        Student studen = null;
+        while(aux!=null){
+            if(aux.student.name==name){
+                studen = aux.student;
+                Debug.Log("done");
+            }
+            aux = aux.next;
+        }
+        return studen;
+
     }
 }

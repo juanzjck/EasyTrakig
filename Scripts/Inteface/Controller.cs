@@ -2,31 +2,61 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+
 
 public class Controller : MonoBehaviour {
     public GameObject canvas_login;
     public ListStudent students;
-    public Student studentLogin;
+    private Student studentLogin;
+    public GameObject menu;
+    public bool login;
+    public GameObject addSignatureCanvas;
+    public GameObject ScheduleList;
    	// Use this for initialization
 	void Start () {
+        ScheduleList=GameObject.FindWithTag("ScheduleList");
+        addSignatureCanvas=GameObject.FindWithTag("AddSignature");
         students = new ListStudent();
-        canvas_login = GameObject.FindGameObjectWithTag("signUp");
-        
-	}
-	
+        menu= GameObject.FindWithTag("Menu");
+        canvas_login=GameObject.FindWithTag("LogIn");
+        canvas_login.SetActive(false);
+        menu.SetActive(false);
+        addSignatureCanvas.SetActive(false);
+        ScheduleList.SetActive(false);
+        Debug.Log("Hola luci");
+       
+	}   
+
+
 	// Update is called once per frame
 	void Update () {
 		
 	}
-    public void logIn(){
-        string email = GameObject.FindGameObjectWithTag("EmailLogIn").GetComponent<InputField>().text;
-        string pass = GameObject.FindGameObjectWithTag("PassLogIn").GetComponent<InputField>().text;
+    public void ScheduleListShow(){
+        ScheduleList.SetActive(true);
 
     }
+    public void logIn()
+    {
+        string email = GameObject.FindGameObjectWithTag("EmailLogIn").GetComponent<InputField>().text;
+        string pass = GameObject.FindGameObjectWithTag("PassLogIn").GetComponent<InputField>().text;
+       login=access(email,pass);
+        if(login==true){
+            Debug.Log("succeful login");
+            canvas_login.SetActive(false);
+            studentLogin = students.searchMail(email);
+            Debug.Log("name:"+ studentLogin.name);
+            menu.SetActive(true);
+        }else{
 
+            Debug.Log("Not succeful login");
+        }
+
+    }
     private bool access(string email, string pass){
        
-        return false;
+        return students.passMatchAndMail(email, pass);
     }
     public void signUp(){
         
@@ -41,7 +71,8 @@ public class Controller : MonoBehaviour {
         string text = "succeful signUp" + student.name;
         Debug.Log(text);
         GameObject.FindWithTag("SingUp").SetActive(false);
-        Debug.Log(students.searchName("juan").name);
+        canvas_login.SetActive(true);
+        Debug.Log("Estudiante"+students.searchName("Juan").name);
     }
 
     public void compareUser(){
@@ -56,5 +87,26 @@ public class Controller : MonoBehaviour {
         studentLogin.addSignature(new Signature(title,profesor,hourBegin,hourEnd));
         Debug.Log("succeful addSchedule");
     }
+    public void showaddSignature(){
+        addSignatureCanvas.SetActive(true);
 
+    }
+    public void AddSignature(){
+        string title, profesor;
+        if (login == true)
+        {
+            int hourBegin, hourend;
+            title=GameObject.FindGameObjectWithTag("TitleSignature").GetComponent<InputField>().text;
+            profesor= GameObject.FindGameObjectWithTag("ProfesorSignature").GetComponent<InputField>().text;
+            hourBegin=int.Parse(GameObject.FindGameObjectWithTag("HourBeginSignatureSingUP").GetComponent<InputField>().text);
+            hourend =int.Parse(GameObject.FindGameObjectWithTag("HourendSignatureSingUP").GetComponent<InputField>().text);
+            Signature signature = new Signature(title, profesor, hourBegin, hourend);
+            studentLogin.addSignature(signature);
+        }else{
+
+            Debug.Log("Not login");
+        }
+            
+
+    }
 }
