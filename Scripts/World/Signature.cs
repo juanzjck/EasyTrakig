@@ -44,4 +44,9 @@ public class Signature  {
 	void Update () {
 		
 	}
+   
+    public string ToString(){
+
+        return "Titulo"+title+"Hora de inicio"+hourBegin+"Hora de fin"+hourend+"Profesor:"+profesor;
+    }
 }

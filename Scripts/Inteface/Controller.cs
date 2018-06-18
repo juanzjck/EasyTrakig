@@ -13,6 +13,7 @@ public class Controller : MonoBehaviour {
     public bool login;
     public GameObject addSignatureCanvas;
     public GameObject ScheduleList;
+    public GameObject textobject;
    	// Use this for initialization
 	void Start () {
         ScheduleList=GameObject.FindWithTag("ScheduleList");
@@ -25,7 +26,17 @@ public class Controller : MonoBehaviour {
         addSignatureCanvas.SetActive(false);
         ScheduleList.SetActive(false);
         Debug.Log("Hola luci");
+        Student studiante = new Student();
+        studiante.setAge(12);
+        studiante.setMail("juan");
+        studiante.setName("juan");
+        studiante.setCarrera("juansd");
+        studiante.setPassword("sdf23");
+        studentLogin = studiante;
+        Signature signaturetest = new Signature("hola","profe",20,23);
        
+        studentLogin.addSignature(signaturetest);
+        ScheduleListShow();
 	}   
 
 
@@ -35,6 +46,12 @@ public class Controller : MonoBehaviour {
 	}
     public void ScheduleListShow(){
         ScheduleList.SetActive(true);
+        for (int i=0; i < studentLogin.schedule.siganatures.length();i++){
+            string text = studentLogin.schedule.siganatures.getInd(i).ToString();
+            Instantiate(textobject);
+            textobject.GetComponent<Text>().text = text;
+            ScheduleList.transform.parent = textobject.transform;
+        }
 
     }
     public void logIn()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Schedule{
-    private ListSignaute siganatures;
+    public ListSignaute siganatures;
 
     public Schedule(){
 
