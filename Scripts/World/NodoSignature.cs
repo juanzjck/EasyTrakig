@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,6 +37,27 @@ public class NodoSignature  {
 
         return signature;
     }
+
+    internal object getStudent()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal NodoSignature getNext()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal object getSignature()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal NodoSignature getBefore()
+    {
+        throw new NotImplementedException();
+    }
+
     public NodoSignature getBefore(NodoSignature before)
     {
 
