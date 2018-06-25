@@ -61,5 +61,40 @@ public class ListSignaute
         return false;
     }
 
-   
+    public bool Delete(Signature s)
+    {
+        if (!isEmpty ())
+        {
+            if (begin == end && begin.getSignature() == s)
+            {
+                begin = end = null;
+            }
+            else if (begin.getSignature() == s)
+            {
+                begin = begin.getNext();
+                return true;
+            }
+            else
+            {
+                NodoSignature ant = begin;
+                NodoSignature temp = begin.getNext();
+                while (temp != null && temp.getSignature() != s)
+                {
+                    ant = temp;
+                    temp = temp.getNext();
+                }
+                if (temp != null)
+                {
+                    ant.setNext(temp.getNext());
+                    if (temp == end)
+                    {
+                        end = ant;
+                    }
+                    return true;
+                }
+                return false;
+            }
+        }
+        return false;
+    }
 }
