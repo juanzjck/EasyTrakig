@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class NodoSignature  {
 
-    private Signature signature;
-    private NodoSignature before, next;
+    public Signature signature;
+    public NodoSignature before, next;
 
     public NodoSignature(Signature signature,NodoSignature before, NodoSignature next)
     {
@@ -14,7 +14,7 @@ public class NodoSignature  {
         this.next = next;
     }
 
-    public void setStudent(Signature signature)
+    public void setSignature(Signature signature)
     {
 
         this.signature = signature;
@@ -31,7 +31,7 @@ public class NodoSignature  {
     }
 
 
-    public Signature getStudent(Student studient)
+    public Signature getSignature(Student studient)
     {
 
         return signature;
