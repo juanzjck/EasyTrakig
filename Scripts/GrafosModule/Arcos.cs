@@ -1,31 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class Arcos : MonoBehaviour {
-    public GameObject inicial;
-    public GameObject final;
-    public float peso;
-    public GameObject camino;
-    public Arcos(){
-
-
+public class Arcos{
+    public Arista inicio, siguiente;
+    public float distancia;
+    public Arcos(Arista inicio,Arista siguiente){
+        this.inicio = inicio;
+        this.siguiente = siguiente;
     }
-	void Start () {
-       
-        draw();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-       
-
-	}
-	public void draw()
-	{
-        Instantiate(camino);	
-	}
-    public void setCamino(GameObject camino){
-        this.camino = camino;
+    public Arcos(Arista inicio, Arista siguiente,float disancia)
+    {
+        this.inicio = inicio;
+        this.siguiente = siguiente;
+        this.distancia = disancia;
     }
+
 }

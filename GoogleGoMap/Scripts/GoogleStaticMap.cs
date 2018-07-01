@@ -119,9 +119,7 @@ public class GoogleStaticMap : MonoBehaviour {
 	{
 		if (MAX_MAP_REQUEST_NUM != 0 && countOfMapRequests < MAX_MAP_REQUEST_NUM) {
 			string baseURL = "https://maps.googleapis.com/maps/api/staticmap?";
-           // string location = "center=" +(-0.1700682)+ "," + (-78.4717504);
-           string location = "center=" + _centerLatLon.lat_d.ToString() + "," + _centerLatLon.lon_d.ToString();
-            Debug.Log(_centerLatLon.lat_d.ToString() + "" + _centerLatLon.lon_d.ToString());
+			string location = "center=" + _centerLatLon.lat_d.ToString () + "," + _centerLatLon.lon_d.ToString ();
 			string parameters = "&zoom=" + zoom.ToString ();
 			parameters += "&size=" + horizontalSize.ToString () + "x" + verticalSize.ToString ();
 			parameters += "&scale=" + (doubleResolution ? "2" : "1");

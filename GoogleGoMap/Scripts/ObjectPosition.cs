@@ -9,15 +9,11 @@ public class ObjectPosition : MonoBehaviour {
 
 	private GeoPoint pos;
 
-    void Update()
-    {
-        setPositionOnMap();
-    }
+
 	void Awake (){
 		pos = new GeoPoint ();
 		pos.setLatLon_deg (lat_d, lon_d);
 	}
-
 
 	public void setPositionOnMap () {
 		Vector2 tempPosition = GameManager.Instance.getMainMapMap ().getPositionOnMap (this.pos);

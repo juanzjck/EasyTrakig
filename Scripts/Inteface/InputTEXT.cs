@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enlaces : MonoBehaviour {
-    public GameObject destino;
-    public double distancia;
+public class InputTEXT : MonoBehaviour {
+
 	// Use this for initialization
 	void Start () {
 		
@@ -14,4 +13,6 @@ public class Enlaces : MonoBehaviour {
 	void Update () {
 		
 	}
+
+
 }

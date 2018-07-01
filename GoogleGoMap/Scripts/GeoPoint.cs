@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GeoPoint{
 
-	private float lat_d_private=0; 
+	private float lat_d_private; 
 	public float lat_d {
 		get { 
 			return lat_d_private;

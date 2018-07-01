@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PlayerLocationService : MonoBehaviour {
-    
+
 	public GeoPoint loc = new GeoPoint();
 	[HideInInspector]
 	public float trueHeading;
@@ -58,7 +58,6 @@ public class PlayerLocationService : MonoBehaviour {
 		} else if (Input.location.status == LocationServiceStatus.Running){
 			GameManager.Instance.playerStatus = GameManager.PlayerStatus.TiedToDevice;
 			loc.setLatLon_deg (Input.location.lastData.latitude, Input.location.lastData.longitude);
-          //  loc.setLatLon_deg (34.020553f, -118.288515f); 
 			Debug.Log ("Location: " + Input.location.lastData.latitude.ToString ("R") + " " + Input.location.lastData.longitude.ToString ("R") + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
 			locServiceIsRunning = true;
 			lastLocUpdate = Input.location.lastData.timestamp;
@@ -73,7 +72,6 @@ public class PlayerLocationService : MonoBehaviour {
 		double lastLocUpdate = 0.0;
 		while (true) {
 			if (lastLocUpdate != Input.location.lastData.timestamp) {
-                //loc.setLatLon_deg (34.020553f, -118.288515f); 
 				loc.setLatLon_deg (Input.location.lastData.latitude, Input.location.lastData.longitude);
 				trueHeading = Input.compass.trueHeading;
 				Debug.Log ("Location: " + Input.location.lastData.latitude.ToString ("R") + " " + Input.location.lastData.longitude.ToString ("R") + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);

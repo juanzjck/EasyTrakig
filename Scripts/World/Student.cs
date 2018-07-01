@@ -9,9 +9,16 @@ public class Student : User
     public Student(){
         
     }
+    public Schedule getSchedule(){
+
+        return schedule;
+    }
     public void addSignature(Signature s)
     {
+        if (schedule==null){
 
+            schedule = new Schedule();
+        }
         schedule.addSgnature(s);
     }
 
