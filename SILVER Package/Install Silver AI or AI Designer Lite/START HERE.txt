@@ -1,0 +1,67 @@
+Thank you for purchasing our AI product!
+
+There are actually 2 AI systems in this package.
+
+You may have some questions:
+
+What's Silver AI? This is older and original version
+and is no longer updated.
+It was originally a low-cost AI system that 
+offered paid addons for more advanced features.
+It has evolved to become "AI Designer Lite".
+
+What's AI Designer Lite? The next version of Silver AI.
+It has been mostly rewritten.  It is the "Lite"
+version of AI Designer Pro.  If this were still
+the Silver AI family, this would be known as
+"Silver AI 2" and AI Designer Pro, the more
+advanced version, would have contained
+all the paid addons for Silver AI.
+
+Why is Silver AI still included?
+In case any previous users still needed a copy.
+
+Why is AI Designer Lite included?
+AI Designer Lite is included as a free upgrade
+to the next version of Silver AI.
+
+Why didn't you just make a new package
+for AI Designer Lite and keep Silver AI as-is?
+Silver AI remains unchanged and is still included
+in this package. We will make a new package just
+for AI Designer Lite, but we also wanted to provide
+our original Silver AI users with a free upgrade!
+
+Is Silver AI still updated? No.
+
+Is AI Designer Lite still updated? Yes.
+
+Is AI Designer Lite backwards compatible
+with older Silver AI projects? No.
+
+Can I use both AI Designer Lite AND Silver AI
+in the same project? Yes, they should have no
+conflicts. But their codebase, weapon systems, 
+API, and AI characters are not compatible.
+
+I want to convert a Silver AI project to
+AI Designer Lite. How complicated would that be?
+There's no auto conversion process since AI Designer
+is not backwards compatible. If you decide to upgrade
+an older project, you will need to re-create all your
+AI characters. We recommend you install AI Designer Lite
+into your Silver AI project (will not overwrite). 
+Then, create a blank scene, and drag an older Silver AI 
+character into the scene. Then drag a copy of the same raw
+model into the scene. Go to the Tools menu -> Ai Designer 
+-> Create from Template.  Finally, copy over your character's
+stats (Health, armor, movement speed, etc) and any
+attached weapon models.  In AI Designer Lite, you will have
+many more additional parameters to fill out.
+
+So which one still I install?
+We recommend you install AI Designer Lite for new projects.
+If you have older Silver AI projects and don't require
+additional features, you may continue using Silver AI as its
+interface and workflow will be more familiar to you.
+

@@ -6,7 +6,7 @@ public class GameManager : Singleton<GameManager> {
 
 	[HideInInspector]
 	public bool locationServicesIsRunning = false;
-
+    public bool local=false;
 	public GameObject mainMap;
 	public GameObject newMap;
 
@@ -24,7 +24,13 @@ public class GameManager : Singleton<GameManager> {
 	}
 
 	void Awake (){
+        if(local==true){
+            mainMap.GetComponent<GoogleStaticMap>().setLocal(true); 
 
+        }else{
+            mainMap.GetComponent<GoogleStaticMap>().setLocal(false); 
+
+        }
 		Time.timeScale = 1;
 		playerStatus = PlayerStatus.TiedToDevice;
 

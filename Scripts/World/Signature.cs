@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Signature  {
+public class Signature :MonoBehaviour  {
     private string title,profesor;
     private int hourBegin, hourend;
-
+    public GameObject bloque;
     public Signature(string title,string profesor,int hourBegin,int hourend){
         this.title = title;
         this.profesor = profesor;

@@ -9,14 +9,16 @@ public class GoogleStaticMap : MonoBehaviour {
 	const float initialPixelToMercator = 2.0f / ((float) TILE_SIZE); 
 	private float curPixelToMercator;
 	private static int countOfMapRequests = 0;
-
+    public bool local = false;
 	// To prevent unintentionally sending to many map request to the server
 	// and paying the fee (for instance in a update loop). Set it to zero to
 	// remove the restriction.
 	private const  int MAX_MAP_REQUEST_NUM = 50;
 	[HideInInspector]
 	public bool isDrawn = false;
-
+    public void setLocal(bool state){
+        this.local = state;
+    }
 	public enum MapType
 	{
 		RoadMap,
@@ -119,7 +121,14 @@ public class GoogleStaticMap : MonoBehaviour {
 	{
 		if (MAX_MAP_REQUEST_NUM != 0 && countOfMapRequests < MAX_MAP_REQUEST_NUM) {
 			string baseURL = "https://maps.googleapis.com/maps/api/staticmap?";
-			string location = "center=" + _centerLatLon.lat_d.ToString () + "," + _centerLatLon.lon_d.ToString ();
+            string location = null;
+            if(local==true){
+                 location = "center=" +(-0.167778) + "," + (-78.4740548);
+
+            }else{
+                 location = "center=" + _centerLatLon.lat_d.ToString () + "," + _centerLatLon.lon_d.ToString ();
+
+            }
 			string parameters = "&zoom=" + zoom.ToString ();
 			parameters += "&size=" + horizontalSize.ToString () + "x" + verticalSize.ToString ();
 			parameters += "&scale=" + (doubleResolution ? "2" : "1");

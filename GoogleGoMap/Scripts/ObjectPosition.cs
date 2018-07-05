@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ObjectPosition : MonoBehaviour {
-	GoogleStaticMap mainMap;
+	public GoogleStaticMap mainMap;
 
 
 	public float lat_d = 0.0f, lon_d = 0.0f;
