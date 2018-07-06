@@ -32,18 +32,7 @@ public class Controller : MonoBehaviour {
         menu.SetActive(false);
         addSignatureCanvas.SetActive(false);
         ScheduleList.SetActive(false);
-       
-        Student studiante = new Student();
-        studiante.setAge(12);
-        studiante.setMail("juan");
-        studiante.setName("juan");
-        studiante.setCarrera("juansd");
-        studiante.setPassword("sdf23");
-        studentLogin = studiante;
-        Signature signaturetest = new Signature("hola","profe",20,23);
-       
-        studentLogin.addSignature(signaturetest);
-        //Estudiantes en base de datos pruebas
+        //Estudiante en base de datos pruebas
         Student studient1 = new Student();
         studient1.setName("Juan Pablo");
         studient1.setMail("juan.salazar.zuniga@udla.edu.ec");
@@ -57,9 +46,10 @@ public class Controller : MonoBehaviour {
 	void Update () {
 		
 	}
- 
+    // para realizar inicio de sesion
     public void logIn()
     {
+        //busca los Game Objects con el tag correspondiente y obtiene los strings de dichos
         string email = GameObject.FindGameObjectWithTag("EmailLogIn").GetComponent<InputField>().text;
         string pass = GameObject.FindGameObjectWithTag("PassLogIn").GetComponent<InputField>().text;
        login=access(email,pass);
