@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39ed620bcb33142e7a0f07f732bc3bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  local: 0
   isDrawn: 0
   zoom: 16
   mapType: 0
@@ -261,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fadc03383ad4d438725b5476139beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMap: {fileID: 0}
   lat_d: 34.022354
   lon_d: -118.29104
 --- !u!23 &66692884
@@ -423,6 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   locationServicesIsRunning: 0
+  local: 0
   mainMap: {fileID: 1344216154}
   newMap: {fileID: 3831993}
   player: {fileID: 1750993599}
@@ -470,6 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fadc03383ad4d438725b5476139beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMap: {fileID: 0}
   lat_d: 34.019127
   lon_d: -118.285515
 --- !u!23 &1157316019
@@ -569,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39ed620bcb33142e7a0f07f732bc3bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  local: 0
   isDrawn: 0
   zoom: 16
   mapType: 0
@@ -908,6 +913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fadc03383ad4d438725b5476139beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMap: {fileID: 0}
   lat_d: 0
   lon_d: 0
 --- !u!1 &2083179300
@@ -940,7 +946,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fadc03383ad4d438725b5476139beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lat_d: 34.022
+  mainMap: {fileID: 0}
+  lat_d: 37.8
   lon_d: -118.288
 --- !u!23 &2083179302
 MeshRenderer:
