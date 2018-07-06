@@ -1,7 +1,0 @@
-ABOUT DEMO SCENES FOLDER:
-
-Folders marked "[PRO ONLY]" mean they contain functionality only available in
-AI Designer PRO version.
-
-Folders marked "[PRO DEMO]" mean the example scene is only available in
-AI Designer PRO, but the functions used are available in both LITE and PRO.

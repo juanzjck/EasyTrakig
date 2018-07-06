@@ -10,6 +10,7 @@ public class ListBlock : MonoBehaviour {
 	void Start () {
         nodes = GameObject.FindGameObjectsWithTag("Node");
         ListNodes();
+
 	}
 	
 	// Update is called once per frame
@@ -18,16 +19,24 @@ public class ListBlock : MonoBehaviour {
 	}
     public void ListNodes()
     {
-        float cont=0f;
+        int cont=0;
         foreach(GameObject node in nodes){
-            cont += 0.45f;
+            if(node.name!="Camino"){
+
+
+            }
             GameObject btn = Instantiate(button);
             btn.SetActive(true);
             ButonListBlocks btnblocks = btn.GetComponent<ButonListBlocks>();
             btnblocks.SetName(node.name);
+            int x = 0;
+            int y = cont;
+            int z = 0;
+            btn.GetComponent<Transform>().position = new Vector3(x, y, z);
+            cont += 100;
             btn.transform.SetParent(scrollBox.transform.parent);
-            btn.transform.transform.position = scrollBox.transform.position;
-            btn.transform.position = new Vector3(btn.transform.position.x,btn.transform.position.y-cont,btn.transform.position.z);
+            //btn.transform.position = scrollBox.transform.position;
+           
         }
     }
 }
