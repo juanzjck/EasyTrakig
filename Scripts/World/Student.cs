@@ -12,7 +12,7 @@ public class Student : User
     public void addSignature(Signature s)
     {
 
-        schedule.addSgnature(s);
+        schedule.addSignature(s);
     }
 
 }

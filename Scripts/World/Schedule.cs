@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Schedule{
-    private ListSignaute siganature;
+    private ListSignature siganature;
     public Schedule(){
+        
 
-
-    }
-    public void addSgnature(Signature s){
+}
+public void addSignature(Signature s){
         siganature.add(s);
     }
 }
