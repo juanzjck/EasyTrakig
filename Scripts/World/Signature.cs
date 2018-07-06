@@ -13,7 +13,6 @@ public class Signature
         this.profesor = profesor;
         this.hourBegin = hourBegin;
         this.hourend = hourend;
-
     }
     public Signature()
     {
@@ -31,7 +30,7 @@ public class Signature
     }
     public void setProfesor(string profesor)
     {
-        this.title = profesor;
+        this.profesor = profesor;
 
     }
 
@@ -45,19 +44,21 @@ public class Signature
         this.hourend = hourend;
 
     }
-    public string getTitle(){
+    public string getTitle()
+    {
         return title;
     }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-   
-   
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
 }

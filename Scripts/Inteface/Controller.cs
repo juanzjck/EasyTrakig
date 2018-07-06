@@ -16,15 +16,16 @@ public class Controller : MonoBehaviour {
     public GameObject ScheduleList;
     public GameObject textobject;
     public GameObject block;
+
    	// Use this for initialization
 	void Start () {
-        //busca los objetos con los tags correxpondientes
+        //busca los objetos con los tags correspondientes
         ScheduleList=GameObject.FindWithTag("ScheduleList");
         addSignatureCanvas=GameObject.FindWithTag("AddSignature");
         menu = GameObject.FindWithTag("Menu");
         canvas_login = GameObject.FindWithTag("LogIn");
 
-        //Instanciamos onjeto de la clase ListStudent, aqui se agregara los estudiantes registrados
+        //Instanciamos objeto de la clase ListStudent, aqui se agregara los estudiantes registrados
         students = new ListStudent();
 
         //Set Cavas(UI) como modo  inicio
@@ -53,15 +54,15 @@ public class Controller : MonoBehaviour {
         string email = GameObject.FindGameObjectWithTag("EmailLogIn").GetComponent<InputField>().text;
         string pass = GameObject.FindGameObjectWithTag("PassLogIn").GetComponent<InputField>().text;
        login=access(email,pass);
-        if(login==true){
-            Debug.Log("succeful login");
+        if(login==true){ 
+            Debug.Log("successful login");
             canvas_login.SetActive(false);
             studentLogin = students.searchMail(email);
             Debug.Log("name:"+ studentLogin.name);
             menu.SetActive(true);
         }else{
 
-            Debug.Log("Not succeful login");
+            Debug.Log("Not successful login");
         }
 
     }
@@ -79,7 +80,7 @@ public class Controller : MonoBehaviour {
         student.setMail(email);
         student.setPassword(pass);
         students.add(student);
-        string text = "succeful signUp" + student.name;
+        string text = "successful signUp" + student.name;
         Debug.Log(text);
 
         showLogIn();
@@ -98,11 +99,11 @@ public class Controller : MonoBehaviour {
  
     public void showaddSignature(){
         
-        addSignatureCanvas.SetActive(true);
-
+        addSignatureCanvas.SetActive(!addSignatureCanvas.active);
+       
     }
     public void showScheduleList(){
-        ScheduleList.SetActive(true);
+        ScheduleList.SetActive(!ScheduleList.active);
          
        }
     public void showSingantures(){
@@ -111,7 +112,8 @@ public class Controller : MonoBehaviour {
         showScheduleList();
     }
     public void AddSignature(){
-        string title, profesor;
+        string title; 
+        string profesor;
         if (login == true)
         {
             int hourBegin, hourend;
@@ -130,6 +132,7 @@ public class Controller : MonoBehaviour {
             signature.setBlock(block);
             studentLogin.addSignature(signature);
             Debug.Log(signature.block.name);
+            Debug.Log("tITULO"+signature.getTitle());
         }else{
 
             Debug.Log("Not login");

@@ -128,13 +128,18 @@ public class PlayerInput : MonoBehaviour {
     /// </summary>
     public void btnFindPath()
     {   
+        
         // Only find if there are start and end node.
         if (startNode != null && endNode != null)
         {
             // Execute Shortest Path.
             ShortestPath finder = gameObject.GetComponent<ShortestPath>();
             List<Transform> paths = finder.findShortestPath(startNode, endNode);
+            foreach (Transform path in paths){
 
+                Renderer rend = path.GetComponent<Renderer>();
+                rend.material.color = Color.grey;
+            }
             // Colour the node red.
             foreach (Transform path in paths)
             {

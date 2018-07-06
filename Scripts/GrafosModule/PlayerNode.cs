@@ -31,28 +31,21 @@ public class PlayerNode : Node {
         Transform aux = null;
         float minDist = Mathf.Infinity;
         //loop por cada Nodo en el array nodes verifica si es mas cercano
-            foreach (GameObject node in nodes)
-            {
+        foreach (GameObject node in nodes)
+        {
             //busca el nodo principal del player para realizar la comparacion
-                if (node.name != "PlayerCapsule") {
-                    float dist = Vector3.Distance(transform.position, node.transform.position);
-                    if (dist < minDist)
-                    {
-                        aux = node.transform;
-                        minDist = dist;
+            if (node.name != "PlayerCapsule")
+            {
+                float dist = Vector3.Distance(transform.position, node.transform.position);
+                if (dist < minDist)
+                {
+                    aux = node.transform;
+                    minDist = dist;
 
-                    }
-
-                
                 }
-
-
-
             }
-
-        return aux;
-          
         }
-       
+        return aux;
     }
+}
 
