@@ -20,6 +20,19 @@ public class ListSignaute
         return l;
 
     }
+    public int GetEnumerato()
+    {
+        NodoSignature aux = begin;
+        int l = 0;
+        while (aux != null)
+        {
+            l++;
+            aux = aux.next;
+        }
+        return l;
+
+    }
+   
     public Signature getInd(int i){
         NodoSignature aux = begin;
         int c = 0;

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Blouque : MonoBehaviour {
-
+public class Block : MonoBehaviour {
+    public string name;
 	// Use this for initialization
 	void Start () {
 		

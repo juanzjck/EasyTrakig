@@ -6,7 +6,7 @@ public class ButonListBlocks : MonoBehaviour {
 
     private string Name;
     public Text ButtonText;
-
+    public GameObject block;
 
     public void SetName(string name)
     {
@@ -15,7 +15,7 @@ public class ButonListBlocks : MonoBehaviour {
     }
     public void Button_Click()
     {
-       
+        GameObject.FindWithTag("Controller").GetComponent<Controller>().block=block;
 
     }
 }

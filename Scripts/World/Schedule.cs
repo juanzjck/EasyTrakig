@@ -9,7 +9,7 @@ public class Schedule{
 
 
     }
-    public ListSignaute GetSignaute(){
+    public ListSignaute GetSignautes(){
         return siganatures;
     }
     public void addSgnature(Signature s){

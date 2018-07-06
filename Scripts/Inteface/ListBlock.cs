@@ -21,21 +21,27 @@ public class ListBlock : MonoBehaviour {
     {
         int cont=0;
         foreach(GameObject node in nodes){
-            if(node.name!="Camino"){
+            
+            if(node.name!="Camino" && node.name != "PlayerCapsule" ){
+                GameObject btn = Instantiate(button);
+                btn.SetActive(true);
+                btn.GetComponent<ButonListBlocks>().block = node;
+                ButonListBlocks btnblocks = btn.GetComponent<ButonListBlocks>();
+                btnblocks.SetName(node.name);
+            
+                int x = 0;
+                int y = cont;
+                int z = 0;
+                btn.GetComponent<Transform>().position = new Vector3(x, y, z);
+                cont += 100;
+                btn.transform.SetParent(scrollBox.transform.parent);
+                //btn.transform.position = scrollBox.transform.position;
+
 
 
             }
-            GameObject btn = Instantiate(button);
-            btn.SetActive(true);
-            ButonListBlocks btnblocks = btn.GetComponent<ButonListBlocks>();
-            btnblocks.SetName(node.name);
-            int x = 0;
-            int y = cont;
-            int z = 0;
-            btn.GetComponent<Transform>().position = new Vector3(x, y, z);
-            cont += 100;
-            btn.transform.SetParent(scrollBox.transform.parent);
-            //btn.transform.position = scrollBox.transform.position;
+             
+
            
         }
     }

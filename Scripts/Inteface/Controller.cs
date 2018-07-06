@@ -6,6 +6,7 @@ using System.Linq;
 
 
 public class Controller : MonoBehaviour {
+    //Atributos 
     public GameObject canvas_login;
     public ListStudent students;
     private Student studentLogin;
@@ -14,18 +15,24 @@ public class Controller : MonoBehaviour {
     public GameObject addSignatureCanvas;
     public GameObject ScheduleList;
     public GameObject textobject;
+    public GameObject block;
    	// Use this for initialization
 	void Start () {
+        //busca los objetos con los tags correxpondientes
         ScheduleList=GameObject.FindWithTag("ScheduleList");
         addSignatureCanvas=GameObject.FindWithTag("AddSignature");
+        menu = GameObject.FindWithTag("Menu");
+        canvas_login = GameObject.FindWithTag("LogIn");
+
+        //Instanciamos onjeto de la clase ListStudent, aqui se agregara los estudiantes registrados
         students = new ListStudent();
-        menu= GameObject.FindWithTag("Menu");
-        canvas_login=GameObject.FindWithTag("LogIn");
+
+        //Set Cavas(UI) como modo  inicio
         canvas_login.SetActive(false);
         menu.SetActive(false);
         addSignatureCanvas.SetActive(false);
         ScheduleList.SetActive(false);
-        Debug.Log("Hola luci");
+       
         Student studiante = new Student();
         studiante.setAge(12);
         studiante.setMail("juan");
@@ -36,7 +43,12 @@ public class Controller : MonoBehaviour {
         Signature signaturetest = new Signature("hola","profe",20,23);
        
         studentLogin.addSignature(signaturetest);
-      
+        //Estudiantes en base de datos pruebas
+        Student studient1 = new Student();
+        studient1.setName("Juan Pablo");
+        studient1.setMail("juan.salazar.zuniga@udla.edu.ec");
+        studient1.setPassword("12345678");
+        students.add(studient1);
       
 	}   
 
@@ -45,16 +57,7 @@ public class Controller : MonoBehaviour {
 	void Update () {
 		
 	}
-    public void ScheduleListShow(){
-        ScheduleList.SetActive(true);
-        for (int i=0; i < studentLogin.schedule.siganatures.length();i++){
-            string text = studentLogin.schedule.siganatures.getInd(i).ToString();
-            Instantiate(textobject);
-            textobject.GetComponent<Text>().text = text;
-            ScheduleList.transform.parent = textobject.transform;
-        }
-
-    }
+ 
     public void logIn()
     {
         string email = GameObject.FindGameObjectWithTag("EmailLogIn").GetComponent<InputField>().text;
@@ -88,12 +91,17 @@ public class Controller : MonoBehaviour {
         students.add(student);
         string text = "succeful signUp" + student.name;
         Debug.Log(text);
-        GameObject.FindWithTag("SingUp").SetActive(false);
-        canvas_login.SetActive(true);
+
+        showLogIn();
         Debug.Log("Estudiante"+students.searchName("Juan").name);
     }
 
     public void compareUser(){
+
+    }
+    public void showLogIn(){
+        GameObject.FindWithTag("SingUp").SetActive(false);
+        canvas_login.SetActive(true);
 
     }
 
@@ -105,17 +113,13 @@ public class Controller : MonoBehaviour {
     }
     public void showScheduleList(){
         ScheduleList.SetActive(true);
-        ListSignaute signautes = studentLogin.getSchedule().GetSignaute();
-        for (int i = 0; i < signautes.length();i++){
-            GameObject Schedule = GameObject.FindWithTag("Schedule");
-        GameObject text= Instantiate(textobject);
-        text.transform.position = Schedule.GetComponentInParent<Transform>().position;
-        
-
-
-        }
-       
+         
        }
+    public void showSingantures(){
+
+        ScheduleList.GetComponent<ListSchedule>().ListSignatures(studentLogin.getSchedule().GetSignautes());
+        showScheduleList();
+    }
     public void AddSignature(){
         string title, profesor;
         if (login == true)
@@ -125,9 +129,17 @@ public class Controller : MonoBehaviour {
             profesor= GameObject.FindGameObjectWithTag("ProfesorSignature").GetComponent<InputField>().text;
             hourBegin=int.Parse(GameObject.FindGameObjectWithTag("HourBeginSignatureSingUP").GetComponent<InputField>().text);
             hourend =int.Parse(GameObject.FindGameObjectWithTag("HourendSignatureSingUP").GetComponent<InputField>().text);
-            Signature signature = new Signature(title, profesor, hourBegin, hourend);
+            Signature signature=new Signature();
+
+           
+            signature.setTitle(title);
+            signature.setHourBegin(hourBegin);
+            signature.setProfesor(profesor);
+            signature.setHourend(hourend);
+                     
+            signature.setBlock(block);
             studentLogin.addSignature(signature);
-            showScheduleList();
+            Debug.Log(signature.block.name);
         }else{
 
             Debug.Log("Not login");

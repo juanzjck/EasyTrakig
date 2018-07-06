@@ -2,25 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Signature :MonoBehaviour  {
-    private string title,profesor;
+public class Signature
+{
+    public string title, profesor;
     private int hourBegin, hourend;
-    public GameObject bloque;
-    public Signature(string title,string profesor,int hourBegin,int hourend){
+    public GameObject block;
+    public Signature(string title, string profesor, int hourBegin, int hourend)
+    {
         this.title = title;
         this.profesor = profesor;
         this.hourBegin = hourBegin;
         this.hourend = hourend;
 
     }
+    public Signature()
+    {
 
-    public void setTitle(string titne){
+    }
+    public void setBlock(GameObject block)
+    {
+
+        this.block = block;
+    }
+    public void setTitle(string titne)
+    {
         this.title = titne;
 
     }
     public void setProfesor(string profesor)
     {
-        this.title =profesor;
+        this.title = profesor;
 
     }
 
@@ -34,6 +45,9 @@ public class Signature :MonoBehaviour  {
         this.hourend = hourend;
 
     }
+    public string getTitle(){
+        return title;
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -45,8 +59,5 @@ public class Signature :MonoBehaviour  {
 		
 	}
    
-    public string ToString(){
-
-        return "Titulo"+title+"Hora de inicio"+hourBegin+"Hora de fin"+hourend+"Profesor:"+profesor;
-    }
+   
 }

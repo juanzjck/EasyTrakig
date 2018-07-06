@@ -6,7 +6,7 @@ public class Vertice : MonoBehaviour
 {
     private int nombre;
     public GameObject vector;
-    public Blouque bloque;
+   
     public GameObject camino;
     public GameObject Predecesor;
     public float distancia;

@@ -53,7 +53,7 @@ public class ListStudent
         bool f=false;
         while (aux != null)
         {
-            if (aux.student.email == email && aux.student.email == pass )
+            if (aux.student.email ==email && aux.student.password == pass )
             {
                 f=true;
 

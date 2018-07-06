@@ -5,19 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInput : MonoBehaviour {
 
-    private Transform node;
-    private Transform startNode;
-    private Transform endNode;
+    public Transform node;
+    public Transform startNode;
+    public Transform endNode;
     private List<Transform> blockPath = new List<Transform>();
 
 	// Update is called once per frame
 	void Update () {
-        mouseInput();
+       // mouseInput();
     }
     
     /// <summary>
     /// Mouse click.
     /// </summary>
+    /*
     private void mouseInput()
     {
         if (Input.GetMouseButtonDown(0))
@@ -51,7 +52,7 @@ public class PlayerInput : MonoBehaviour {
             }
         }
     }
-
+    */
     /// <summary>
     /// Button for Set Starting node.
     /// </summary>
