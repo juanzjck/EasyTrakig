@@ -30,26 +30,26 @@ public class ListSchedule : MonoBehaviour
        
     }
     public void ListSignatures(ListSignaute  Signatures){
-       
+        int cont = 0;
         if(clicked==false){
-            int cont = 0;
+           
             Debug.Log("Comenzando");
 
             for (int i = 0; i < Signatures.GetEnumerato(); i++)
             {
 
-                GameObject btn = Instantiate(button);
+                GameObject btn = Instantiate(button,scrollBox.transform.parent);
                 btn.SetActive(true);
                 ButtonClass btnblocks = btn.GetComponent<ButtonClass>();
                 btnblocks.SetName(Signatures.getInd(i).title);
                 btnblocks.setBlock(Signatures.getInd(i).block);
-                btn.transform.SetParent(scrollBox.transform.parent);
+               // btn.transform.SetParent(scrollBox.transform.parent);
                 int x = 0;
                 int y = cont;
                 int z = 0;
                 btn.GetComponent<Transform>().position = new Vector3(x, y, z);
                 cont += 100;
-
+                btn.transform.SetParent(scrollBox.transform.parent);
 
             }
 

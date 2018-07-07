@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Generador de Nodos
+ * 
+ */
 public class GenerateGrid : MonoBehaviour {
 
     public int row = 5;

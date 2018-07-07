@@ -8,6 +8,7 @@ public class ButtonClass : MonoBehaviour {
     public GameObject block;
     public GameObject controllergraf;
     public GameObject start;
+    public float y;
     public void SetName(string name)
     {
         
@@ -19,6 +20,7 @@ public class ButtonClass : MonoBehaviour {
     }
     public void Start()
     {
+        
         start = GameObject.Find("PlayerCapsule");
         controllergraf = GameObject.FindWithTag("GraphController");
     }
