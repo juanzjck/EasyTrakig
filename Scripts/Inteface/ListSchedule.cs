@@ -17,7 +17,7 @@ public class ListSchedule : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
         buttons = GameObject.FindGameObjectsWithTag("Clase");
-
+       // Organizar();
 	}
     public void actualzar(){
        
@@ -29,29 +29,43 @@ public class ListSchedule : MonoBehaviour
 
        
     }
+    public void Organizar()
+    {
+       
+      
+       
+    }
     public void ListSignatures(ListSignaute  Signatures){
-        int cont = 0;
+        int c = 0;
         if(clicked==false){
            
-            Debug.Log("Comenzando");
+            Debug.Log("Comenzando...");
 
             for (int i = 0; i < Signatures.GetEnumerato(); i++)
             {
 
-                GameObject btn = Instantiate(button,scrollBox.transform.parent);
+                var btn = Instantiate(button);
+
                 btn.SetActive(true);
                 ButtonClass btnblocks = btn.GetComponent<ButtonClass>();
                 btnblocks.SetName(Signatures.getInd(i).title);
                 btnblocks.setBlock(Signatures.getInd(i).block);
-               // btn.transform.SetParent(scrollBox.transform.parent);
+
                 int x = 0;
-                int y = cont;
+                int y = c;
                 int z = 0;
-                btn.GetComponent<Transform>().position = new Vector3(x, y, z);
-                cont += 100;
-                btn.transform.SetParent(scrollBox.transform.parent);
+                c = c + 150;
+
+               
+                btn.transform.SetParent(scrollBox.transform,false);
+                btn.transform.parent = scrollBox.transform;
+                RectTransform rt = btn.GetComponent<RectTransform>();
+                rt.anchoredPosition = rt.transform.position;
+                rt.localPosition = new Vector2(0, -y);
+               // btn.transform.SetPositionAndRotation(pos,scrollBox.transform.localRotation);
 
             }
+
 
         }else{
 

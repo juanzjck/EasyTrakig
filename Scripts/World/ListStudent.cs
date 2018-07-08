@@ -63,6 +63,10 @@ public class ListStudent
         return f;
 
     }
+    public bool matchStudent(string email,string name){
+
+        return searchMail(email) == null & searchName(name)==null ;
+    }
     public Student searchMail(string email){
         NodoStudent aux = begin;
         Student studen = null;

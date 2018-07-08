@@ -14,11 +14,11 @@ public class Controller : MonoBehaviour {
     public bool login;
     public GameObject addSignatureCanvas;
     public GameObject ScheduleList;
-    public GameObject textobject;
+    bool loaded= false;
     public GameObject block;
-
+    public GameObject eventText;
    	// Use this for initialization
-	void Start () {
+	void Awake() {
         //busca los objetos con los tags correspondientes
         ScheduleList=GameObject.FindWithTag("ScheduleList");
         addSignatureCanvas=GameObject.FindWithTag("AddSignature");
@@ -34,19 +34,28 @@ public class Controller : MonoBehaviour {
         addSignatureCanvas.SetActive(false);
         ScheduleList.SetActive(false);
         //Estudiante en base de datos pruebas
-        Student studient1 = new Student();
-        studient1.setName("Juan Pablo");
-        studient1.setMail("juan.salazar.zuniga@udla.edu.ec");
-        studient1.setPassword("12345678");
-        students.add(studient1);
-      
+       
 	}   
 
 
 	// Update is called once per frame
 	void Update () {
-		
+        if(loaded==false){
+            EcapmleDataSignture();
+            loaded = true;
+        }
+
 	}
+    public void EcapmleDataSignture(){
+        Student studient1 = new Student();
+        studient1.setName("Juan Pablo");
+        studient1.setMail("juan.salazar.zuniga@udla.edu.ec");
+        studient1.setPassword("12345678");
+        Debug.Log(studient1.name);
+        students.add(studient1);
+        Debug.Log(studient1.name);
+       
+    }
     // para realizar inicio de sesion
     public void logIn()
     {
@@ -55,10 +64,13 @@ public class Controller : MonoBehaviour {
         string pass = GameObject.FindGameObjectWithTag("PassLogIn").GetComponent<InputField>().text;
        login=access(email,pass);
         if(login==true){ 
-            Debug.Log("successful login");
+           
             canvas_login.SetActive(false);
             studentLogin = students.searchMail(email);
-            Debug.Log("name:"+ studentLogin.name);
+           
+            eventText.GetComponent<Text>().text = studentLogin.name;
+            eventText.GetComponent<Text>().color = Color.green;
+
             menu.SetActive(true);
         }else{
 
@@ -68,7 +80,7 @@ public class Controller : MonoBehaviour {
     }
     private bool access(string email, string pass){
        
-        return students.passMatchAndMail(email, pass);
+        return students.passMatchAndMail(email,pass);
     }
     public void signUp(){
         
@@ -76,15 +88,25 @@ public class Controller : MonoBehaviour {
         string email = GameObject.FindGameObjectWithTag("EmailSingUp").GetComponent<InputField>().text;
         string pass = GameObject.FindGameObjectWithTag("PassSingUP").GetComponent<InputField>().text;
         Student student = new Student();
-        student.setName(name);
-        student.setMail(email);
-        student.setPassword(pass);
-        students.add(student);
-        string text = "successful signUp" + student.name;
-        Debug.Log(text);
+        if(name!="" & name!=null & email != "" & email != null & pass != "" & pass != null){
+            if(students.matchStudent(email,name)==true){
+                student.setName(name);
+                student.setMail(email);
+                student.setPassword(pass);
+                students.add(student);
+                eventText.GetComponent<Text>().text = "Registro Exitoso";
+                showLogIn();
+            }else{
+                eventText.GetComponent<Text>().text = "Usuario ya registrado";
+                eventText.GetComponent<Text>().color = Color.red;
+            }
 
-        showLogIn();
-        Debug.Log("Estudiante"+students.searchName("Juan").name);
+        }else{
+            eventText.GetComponent<Text>().text = "SingUp invalido";
+            eventText.GetComponent<Text>().color = Color.red;
+        }
+       
+
     }
 
     public void compareUser(){
@@ -102,14 +124,11 @@ public class Controller : MonoBehaviour {
         addSignatureCanvas.SetActive(!addSignatureCanvas.active);
        
     }
-    public void showScheduleList(){
-        ScheduleList.SetActive(!ScheduleList.active);
-         
-       }
-    public void showSingantures(){
 
+    public void showSingantures(){
+        
         ScheduleList.GetComponent<ListSchedule>().ListSignatures(studentLogin.getSchedule().GetSignautes());
-        showScheduleList();
+
     }
     public void AddSignature(){
         string title; 
@@ -133,6 +152,9 @@ public class Controller : MonoBehaviour {
             studentLogin.addSignature(signature);
             Debug.Log(signature.block.name);
             Debug.Log("tITULO"+signature.getTitle());
+            eventText.GetComponent<Text>().text = "Clase Registrada";
+            eventText.GetComponent<Text>().color = Color.green;
+
         }else{
 
             Debug.Log("Not login");

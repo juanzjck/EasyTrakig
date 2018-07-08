@@ -14,8 +14,14 @@ public class User {
         this.carrera = carrera;
         this.age = age;
     }
+   
     public void setName(string name){
-        this.name = name;
+        if (name != ""){
+            this.name = name;
+           
+        }else{
+            Debug.Log("No es correcto");
+        }
     }
     public void setPassword(string password)
     {

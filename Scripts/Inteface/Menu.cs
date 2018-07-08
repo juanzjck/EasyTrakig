@@ -8,14 +8,17 @@ public class Menu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         show = false;
-        subMenu.SetActive(false);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+    public void closeAndOpen(){
 
+        subMenu.SetActive(!subMenu.active);
+    }
     public void onClcik(){
         show = !show;
         if (show == true)
