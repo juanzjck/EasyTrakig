@@ -49,6 +49,8 @@ public class ListTransfor {
     }
     public void  drawLine(){
         NodoTransform aux = begin;
+        Debug.Log("===============================Caminos========================");
+
         while (aux != null){
             
             LineDraw ln= aux.getData().GetComponent<LineDraw>();
@@ -56,7 +58,8 @@ public class ListTransfor {
             ln.destination = aux.getSiguiente().getData();
             ln.startDraw();
             aux = aux.getSiguiente();
-
+            float dis = Vector3.Distance(aux.getData().position,aux.getSiguiente().getData().position);
+            Debug.Log("Del punto:"+aux.getData().name+"Hasta:"+aux.getSiguiente().getData().name+"Distancia:"+dis);
         }
 
     }

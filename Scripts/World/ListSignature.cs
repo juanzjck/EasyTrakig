@@ -32,7 +32,18 @@ public class ListSignaute
         return l;
 
     }
-   
+    public NodoSignature getNodoInd(int i){
+
+        NodoSignature aux = begin;
+        int c = 0;
+        while (c < i)
+        {
+            c++;
+            aux = aux.next;
+        }
+        return aux;
+
+    }
     public Signature getInd(int i){
         NodoSignature aux = begin;
         int c = 0;
@@ -53,10 +64,26 @@ public class ListSignaute
             begin.setBefore(n);
             n.setNext(begin);
             begin = n;
-
+            ordenar();
         }
         Debug.Log("ADDED");
 
     }
 
+    public void ordenar()
+    {
+        
+        for (int i = 0; i < length() - 1; i++)
+        {
+            for (int j = 0; j < length() - 1; j++)
+            {
+                if (getInd(i).hourBegin < getInd(j+1).hourBegin)
+                {
+                    Signature   tmp =getInd(j+1);
+                    getNodoInd(j+1).setSignature(getInd(i));
+                    getNodoInd(j).setSignature(tmp);
+                }
+            }
+        }
+    }
 }

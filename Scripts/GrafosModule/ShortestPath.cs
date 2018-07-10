@@ -61,7 +61,8 @@ public class ShortestPath : MonoBehaviour
         // Set the starting node weight to 0;
         Node startNode = start.GetComponent<Node>();
         startNode.setWeight(0);
-
+       
+            
         while (unexplored.Count > 0)
         {
             // Sort the explored by their weight in ascending order.
@@ -83,7 +84,7 @@ public class ShortestPath : MonoBehaviour
 
             Node currentNode = current.GetComponent<Node>();
             List<Transform> neighbours = currentNode.getNeighbourNode();
-            foreach (Transform neighNode in neighbours)
+           foreach (Transform neighNode in neighbours)
             {
                 Node node = neighNode.GetComponent<Node>();
 
@@ -92,6 +93,7 @@ public class ShortestPath : MonoBehaviour
                 {
                     // Get the distance of the object.
                     float distance = Vector3.Distance(neighNode.position, current.position);
+
                     distance = currentNode.getWeight() + distance;
 
                     // If the added distance is less than the current weight.

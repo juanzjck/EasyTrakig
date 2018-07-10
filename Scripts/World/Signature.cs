@@ -5,7 +5,7 @@ using UnityEngine;
 public class Signature
 {
     public string title, profesor;
-    private int hourBegin, hourend;
+    public int hourBegin, hourend;
     public GameObject block;
     public Signature(string title, string profesor, int hourBegin, int hourend)
     {
