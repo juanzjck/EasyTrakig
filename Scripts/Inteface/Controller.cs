@@ -126,7 +126,7 @@ public class Controller : MonoBehaviour {
     }
 
     public void showSingantures(){
-        studentLogin.getSchedule().GetSignautes().ordenar();
+       // studentLogin.getSchedule().GetSignautes().ordenar();
        ScheduleList.GetComponent<ListSchedule>().ListSignatures(studentLogin.getSchedule().GetSignautes());
        
     }

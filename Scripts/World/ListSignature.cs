@@ -67,6 +67,7 @@ public class ListSignaute
 
         }
         Debug.Log("ADDED");
+        ordenar();
        
     }
 
