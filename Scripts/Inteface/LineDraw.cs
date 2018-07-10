@@ -10,10 +10,12 @@ public class LineDraw : MonoBehaviour {
     public Transform destination;
     public Transform origin;
     public List<Transform> nodes;
+   
     public void setLineDraw(Transform destination,Transform origin){
-        this.origin = origin;
-        this.destination = destination;
-
+        
+            this.origin = origin;
+            this.destination = destination;
+    
 
     }
     public void endDraw(){
@@ -32,13 +34,15 @@ public class LineDraw : MonoBehaviour {
         lineRender = GetComponent<LineRenderer>();
         lineRender.SetPosition(0, origin.position);
         lineRender.SetWidth(0.45f, 0.45f);
-        dist = Vector3.Distance(destination.position, origin.position);
+
 
     }
 	// Update is called once per frame
 	void Update () {
+       
         lineRender.SetColors(Color.blue,Color.cyan);
         if(destination!=null && origin !=null){
+            dist = Vector3.Distance(destination.position, origin.position);
             for (int i = 0; i < dist; i++)
         {
             count += 0.1f;

@@ -10,9 +10,30 @@ public class PlayerInput : MonoBehaviour {
     public Transform endNode;
     private List<Transform> blockPath = new List<Transform>();
     public GameObject controller;
+   
+    public bool clicked;
+
 	// Update is called once per frame
 	void Update () {
       
+    }
+
+    public void allPaths(){
+
+        GameObject[] paths= GameObject.FindGameObjectsWithTag("Nodes");
+        ListTransfor pathsTrasform;
+        foreach (GameObject n in paths)
+        {
+
+
+        }
+
+        if(clicked!=false){
+
+
+        }
+            
+
     }
     /// <summary>
     /// Button for Set Starting node.
