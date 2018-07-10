@@ -37,6 +37,7 @@ public class LineDraw : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+        lineRender.SetColors(Color.blue,Color.cyan);
         if(destination!=null && origin !=null){
             for (int i = 0; i < dist; i++)
         {

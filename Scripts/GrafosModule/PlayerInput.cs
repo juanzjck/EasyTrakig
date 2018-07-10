@@ -93,10 +93,12 @@ public class PlayerInput : MonoBehaviour {
         // Only find if there are start and end node.
         if (startNode != null && endNode != null)
         {
+            //limpar camino
             GameObject[] drawlineners = GameObject.FindGameObjectsWithTag("Node");
             foreach (GameObject n in drawlineners)
             {
-              
+                Renderer rend = n.GetComponent<Renderer>();
+                rend.material.color = Color.gray;
                 n.GetComponent<LineDraw>().endDraw();
 
             }
@@ -119,7 +121,7 @@ public class PlayerInput : MonoBehaviour {
             {
                 Renderer rend = path.GetComponent<Renderer>();
                 LineDraw line = GetComponent<LineDraw>();
-                rend.material.color = Color.red;
+                rend.material.color = Color.blue;
                 //line.origin = path;
 
 
