@@ -9,7 +9,7 @@ public class PlayerInput : MonoBehaviour {
     public Transform startNode;
     public Transform endNode;
     private List<Transform> blockPath = new List<Transform>();
-
+    public GameObject controller;
 	// Update is called once per frame
 	void Update () {
       
@@ -93,20 +93,43 @@ public class PlayerInput : MonoBehaviour {
         // Only find if there are start and end node.
         if (startNode != null && endNode != null)
         {
+            GameObject[] drawlineners = GameObject.FindGameObjectsWithTag("Node");
+            foreach (GameObject n in drawlineners)
+            {
+              
+                n.GetComponent<LineDraw>().endDraw();
+
+            }
             // Execute Shortest Path.
             ShortestPath finder = gameObject.GetComponent<ShortestPath>();
             List<Transform> paths = finder.findShortestPath(startNode, endNode);
+            int sizeOfList = paths.Count;
             foreach (Transform path in paths){
 
                 Renderer rend = path.GetComponent<Renderer>();
                 rend.material.color = Color.grey;
             }
+
+            ListTransfor pathsList=new ListTransfor();
+           
+          
             // Colour the node red.
+
             foreach (Transform path in paths)
             {
                 Renderer rend = path.GetComponent<Renderer>();
+                LineDraw line = GetComponent<LineDraw>();
                 rend.material.color = Color.red;
+                //line.origin = path;
+
+
+                pathsList.add(path);
+
             }
+           
+            pathsList.print();
+            pathsList.drawLine();
+
         }
     }
 

@@ -16,7 +16,7 @@ public class PlayerNode : Node {
 	
 	// Update is called once per frame
 	void Update () {
-       
+        Closer();
 	}
     //clase para actualizar el nodo mas cercano
     public void Closer(){
