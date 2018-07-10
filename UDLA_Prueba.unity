@@ -485,7 +485,7 @@ Transform:
   m_GameObject: {fileID: 59731230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.323, y: 4.72, z: 7.4699993}
-  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
+  m_LocalScale: {x: 0.26451957, y: 0.26451957, z: 0.26451957}
   m_Children: []
   m_Father: {fileID: 259619383}
   m_RootOrder: 0
@@ -504,10 +504,10 @@ MonoBehaviour:
   weight: 2.1474836e+9
   parentNode: {fileID: 0}
   neighbourNode:
+  - {fileID: 750012637}
+  - {fileID: 225062520}
   - {fileID: 1762120280}
   - {fileID: 1593211656}
-  - {fileID: 225062520}
-  - {fileID: 750012637}
   walkable: 1
 --- !u!135 &59731233
 SphereCollider:
@@ -757,8 +757,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2024876691}
   m_HandleRect: {fileID: 2024876690}
   m_Direction: 1
-  m_Value: 0
-  m_Size: 0.86302054
+  m_Value: 0.0000014996349
+  m_Size: 0.8643333
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1496,7 +1496,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 218747240}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.41, y: 4.72, z: 6.08}
+  m_LocalPosition: {x: 3.44, y: 4.72, z: 5.89}
   m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_Children: []
   m_Father: {fileID: 259619383}
@@ -1517,6 +1517,8 @@ MonoBehaviour:
   parentNode: {fileID: 0}
   neighbourNode:
   - {fileID: 379986593}
+  - {fileID: 1593211656}
+  - {fileID: 1377740011}
   walkable: 1
 --- !u!135 &218747243
 SphereCollider:
@@ -1819,6 +1821,8 @@ MonoBehaviour:
   parentNode: {fileID: 0}
   neighbourNode:
   - {fileID: 379986593}
+  - {fileID: 750012637}
+  - {fileID: 59731231}
   walkable: 1
 --- !u!135 &225062522
 SphereCollider:
@@ -2266,7 +2270,7 @@ Transform:
   m_GameObject: {fileID: 272849009}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.014, y: 4.72, z: 10.8}
-  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
+  m_LocalScale: {x: 0.28691527, y: 0.28691527, z: 0.28691527}
   m_Children: []
   m_Father: {fileID: 259619383}
   m_RootOrder: 24
@@ -3736,7 +3740,7 @@ GameObject:
   - component: {fileID: 400864697}
   - component: {fileID: 400864696}
   m_Layer: 0
-  m_Name: Bloque5
+  m_Name: Bloque1
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4558,7 +4562,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 509348823}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.497, y: 4.72, z: 3.512}
+  m_LocalPosition: {x: -0.42, y: 4.72, z: 3.89}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 259619383}
@@ -4903,7 +4907,7 @@ GameObject:
   - component: {fileID: 523964558}
   - component: {fileID: 523964557}
   m_Layer: 0
-  m_Name: Cafeteria
+  m_Name: Bloque2
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5523,7 +5527,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 586582571}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.098, y: 4.72, z: 8.622}
+  m_LocalPosition: {x: 4.82, y: 4.72, z: 8.43}
   m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_Children: []
   m_Father: {fileID: 259619383}
@@ -5543,9 +5547,11 @@ MonoBehaviour:
   weight: 2.1474836e+9
   parentNode: {fileID: 0}
   neighbourNode:
+  - {fileID: 1377740011}
   - {fileID: 817596137}
   - {fileID: 523964551}
-  - {fileID: 1377740011}
+  - {fileID: 1856126884}
+  - {fileID: 272849010}
   walkable: 1
 --- !u!135 &586582574
 SphereCollider:
@@ -6631,7 +6637,7 @@ Transform:
   m_GameObject: {fileID: 750012636}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.592, y: 4.72, z: 5.412}
-  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
+  m_LocalScale: {x: 0.28819662, y: 0.28819662, z: 0.28819662}
   m_Children: []
   m_Father: {fileID: 259619383}
   m_RootOrder: 1
@@ -6650,10 +6656,10 @@ MonoBehaviour:
   weight: 2.1474836e+9
   parentNode: {fileID: 0}
   neighbourNode:
+  - {fileID: 59731231}
   - {fileID: 2115152773}
   - {fileID: 509348824}
   - {fileID: 225062520}
-  - {fileID: 59731231}
   walkable: 1
 --- !u!135 &750012639
 SphereCollider:
@@ -7257,7 +7263,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 817596136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.6, y: 4.72, z: 9.324}
+  m_LocalPosition: {x: 5.67, y: 4.72, z: 9.29}
   m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_Children: []
   m_Father: {fileID: 259619383}
@@ -7280,6 +7286,7 @@ MonoBehaviour:
   - {fileID: 1943874663}
   - {fileID: 586582572}
   - {fileID: 272849010}
+  - {fileID: 1377740011}
   walkable: 1
 --- !u!135 &817596139
 SphereCollider:
@@ -7618,7 +7625,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 869794239}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.13, y: 4.68, z: 8.67}
+  m_LocalPosition: {x: 8.08, y: 4.68, z: 8.57}
   m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_Children: []
   m_Father: {fileID: 259619383}
@@ -7638,7 +7645,8 @@ MonoBehaviour:
   weight: 2.1474836e+9
   parentNode: {fileID: 0}
   neighbourNode:
-  - {fileID: 817596137}
+  - {fileID: 2014891152}
+  - {fileID: 1124954685}
   walkable: 1
 --- !u!135 &869794242
 SphereCollider:
@@ -8495,8 +8503,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1384855674}
   m_HandleRect: {fileID: 1384855673}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8869,7 +8877,7 @@ MonoBehaviour:
   neighbourNode:
   - {fileID: 1545434511}
   - {fileID: 430578577}
-  - {fileID: 430578577}
+  - {fileID: 2014891152}
   walkable: 1
 --- !u!135 &1025030719
 SphereCollider:
@@ -9108,7 +9116,7 @@ Transform:
   m_GameObject: {fileID: 1124954684}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.01, y: 4.72, z: 10.579}
-  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
+  m_LocalScale: {x: 0.24430425, y: 0.24430425, z: 0.24430425}
   m_Children: []
   m_Father: {fileID: 259619383}
   m_RootOrder: 25
@@ -9127,9 +9135,10 @@ MonoBehaviour:
   weight: 2.1474836e+9
   parentNode: {fileID: 0}
   neighbourNode:
+  - {fileID: 1890444963}
   - {fileID: 869794240}
-  - {fileID: 272849010}
   - {fileID: 1545434511}
+  - {fileID: 272849010}
   walkable: 1
 --- !u!135 &1124954687
 SphereCollider:
@@ -9615,7 +9624,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 41.093796}
+  m_AnchoredPosition: {x: 0, y: 40.69998}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1179538612
@@ -9934,6 +9943,7 @@ MonoBehaviour:
   - {fileID: 400864690}
   - {fileID: 1856126884}
   - {fileID: 1834105941}
+  - {fileID: 1593211656}
   walkable: 1
 --- !u!135 &1353922166
 SphereCollider:
@@ -10265,7 +10275,7 @@ Transform:
   m_GameObject: {fileID: 1377740010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.197, y: 4.72, z: 6.295}
-  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
+  m_LocalScale: {x: 0.28057232, y: 0.28057232, z: 0.28057232}
   m_Children: []
   m_Father: {fileID: 259619383}
   m_RootOrder: 27
@@ -10285,8 +10295,10 @@ MonoBehaviour:
   parentNode: {fileID: 0}
   neighbourNode:
   - {fileID: 218747241}
-  - {fileID: 586582572}
   - {fileID: 1593211656}
+  - {fileID: 586582572}
+  - {fileID: 1545434511}
+  - {fileID: 817596137}
   walkable: 1
 --- !u!135 &1377740013
 SphereCollider:
@@ -11105,7 +11117,7 @@ Transform:
   m_GameObject: {fileID: 1545434510}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.57, y: 4.72, z: 4.91}
-  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
+  m_LocalScale: {x: 0.2742027, y: 0.2742027, z: 0.2742027}
   m_Children: []
   m_Father: {fileID: 259619383}
   m_RootOrder: 21
@@ -11124,8 +11136,8 @@ MonoBehaviour:
   weight: 2.1474836e+9
   parentNode: {fileID: 0}
   neighbourNode:
-  - {fileID: 218747241}
-  - {fileID: 1124954685}
+  - {fileID: 1377740011}
+  - {fileID: 1025030717}
   - {fileID: 1124954685}
   walkable: 1
 --- !u!135 &1545434513
@@ -11705,7 +11717,7 @@ Transform:
   m_GameObject: {fileID: 1593211655}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.0909996, y: 4.72, z: 6.6900005}
-  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
+  m_LocalScale: {x: 0.25769538, y: 0.25769538, z: 0.25769538}
   m_Children: []
   m_Father: {fileID: 259619383}
   m_RootOrder: 18
@@ -12288,7 +12300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000010586064, y: 0.00006291183}
+  m_AnchoredPosition: {x: 0.0000017294414, y: 5.4764104e-10}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1684106271
@@ -12721,7 +12733,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1412266184}
   m_HandleRect: {fileID: 1412266183}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -13190,6 +13202,8 @@ MonoBehaviour:
   parentNode: {fileID: 0}
   neighbourNode:
   - {fileID: 400864690}
+  - {fileID: 59731231}
+  - {fileID: 1593211656}
   walkable: 1
 --- !u!135 &1762120282
 SphereCollider:
@@ -13469,7 +13483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1834105940
@@ -13502,7 +13516,7 @@ Transform:
   m_GameObject: {fileID: 1834105940}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.85, y: 4.581, z: 11.234}
-  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
+  m_LocalScale: {x: 0.26991844, y: 0.26991844, z: 0.26991844}
   m_Children: []
   m_Father: {fileID: 259619383}
   m_RootOrder: 23
@@ -13521,9 +13535,11 @@ MonoBehaviour:
   weight: 2.1474836e+9
   parentNode: {fileID: 0}
   neighbourNode:
-  - {fileID: 777222692}
-  - {fileID: 272849010}
   - {fileID: 1353922164}
+  - {fileID: 777222692}
+  - {fileID: 1593211656}
+  - {fileID: 1856126884}
+  - {fileID: 272849010}
   walkable: 1
 --- !u!135 &1834105943
 SphereCollider:
@@ -13761,7 +13777,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1856126883}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.042, y: 4.72, z: 8.622}
+  m_LocalPosition: {x: 4.09, y: 4.72, z: 8.66}
   m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_Children: []
   m_Father: {fileID: 259619383}
@@ -14243,7 +14259,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 339010167}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999998
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14299,7 +14315,7 @@ GameObject:
   - component: {fileID: 1890444970}
   - component: {fileID: 1890444969}
   m_Layer: 0
-  m_Name: Bloque2
+  m_Name: Bloque5
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16057,7 +16073,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2115152772}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.33, y: 4.542, z: 6.33}
+  m_LocalPosition: {x: -0.63, y: 4.542, z: 6.4}
   m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_Children: []
   m_Father: {fileID: 259619383}
