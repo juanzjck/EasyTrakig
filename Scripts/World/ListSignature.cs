@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ListSignaute 
 {
-    NodoSignature begin, end;
+    NodoSignature begin;
   
     public bool isEmpty(){
-        return begin == null & end == null;
+        return begin == null;
 
     }
     public int length(){
@@ -58,32 +58,48 @@ public class ListSignaute
     {
         NodoSignature n = new NodoSignature(s,null,null);
         if(isEmpty()){
-            begin = end = n;
+            begin = n;
 
         }else{
             begin.setBefore(n);
             n.setNext(begin);
             begin = n;
-            ordenar();
+
         }
         Debug.Log("ADDED");
-
+       
     }
 
+    public void print(){
+        NodoSignature aux = begin;
+       
+        while (aux!=null)
+        {
+            Debug.Log(aux.signature.title);
+            aux = aux.next;
+        }
+       
+
+    }
     public void ordenar()
     {
-        
-        for (int i = 0; i < length() - 1; i++)
-        {
-            for (int j = 0; j < length() - 1; j++)
+        if(length()>1){
+            
+            for (int i = 0; i < length() ; i++)
             {
-                if (getInd(i).hourBegin < getInd(j+1).hourBegin)
+                for (int j = i; j < length()-1; j++)
                 {
-                    Signature   tmp =getInd(j+1);
-                    getNodoInd(j+1).setSignature(getInd(i));
-                    getNodoInd(j).setSignature(tmp);
+                    if (getInd(i).hourBegin > getInd(j + 1).hourBegin)
+                    {
+                        Signature tmp = getInd(j + 1);
+
+                        getNodoInd(j + 1).setSignature(getInd(i));
+                        getNodoInd(j).setSignature(tmp);
+                    }
                 }
             }
         }
+        print();
+       
     }
 }

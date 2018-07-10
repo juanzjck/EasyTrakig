@@ -48,7 +48,7 @@ public class ListSchedule : MonoBehaviour
 
                 btn.SetActive(true);
                 ButtonClass btnblocks = btn.GetComponent<ButtonClass>();
-                btnblocks.SetName(Signatures.getInd(i).title);
+                btnblocks.SetName(Signatures.getInd(i).title+Signatures.getInd(i).hourBegin);
                 btnblocks.setBlock(Signatures.getInd(i).block);
 
                 int x = 0;

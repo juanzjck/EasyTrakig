@@ -126,9 +126,9 @@ public class Controller : MonoBehaviour {
     }
 
     public void showSingantures(){
-        
-        ScheduleList.GetComponent<ListSchedule>().ListSignatures(studentLogin.getSchedule().GetSignautes());
-
+        studentLogin.getSchedule().GetSignautes().ordenar();
+       ScheduleList.GetComponent<ListSchedule>().ListSignatures(studentLogin.getSchedule().GetSignautes());
+       
     }
     public void AddSignature(){
         string title; 
