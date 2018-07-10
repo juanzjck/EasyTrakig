@@ -20,17 +20,20 @@ public class PlayerInput : MonoBehaviour {
 
     public void allPaths(){
 
-        GameObject[] paths= GameObject.FindGameObjectsWithTag("Nodes");
-        ListTransfor pathsTrasform;
-        foreach (GameObject n in paths)
-        {
-
-
-        }
+        GameObject[] paths= GameObject.FindGameObjectsWithTag("Node");
+        ListTransfor pathsTrasform=new ListTransfor();
+        clicked = !clicked;
 
         if(clicked!=false){
 
+            foreach (GameObject n in paths)
+            {
+                pathsTrasform.add(n.transform);
+            }
+            pathsTrasform.drawLine();
 
+        }else{
+            pathsTrasform.clearLine();
         }
             
 
